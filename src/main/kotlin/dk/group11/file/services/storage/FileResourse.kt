@@ -1,4 +1,4 @@
-package dk.gruppe11.file.services.storage
+package dk.group11.file.services.storage
 
 import org.springframework.core.io.Resource
 

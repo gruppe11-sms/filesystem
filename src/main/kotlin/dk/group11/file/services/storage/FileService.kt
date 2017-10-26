@@ -1,12 +1,10 @@
-package dk.gruppe11.file.services.storage
+package dk.group11.file.services.storage
 
-import dk.gruppe11.file.models.FileEntity
-import dk.gruppe11.file.repositories.FileRepository
-import org.springframework.core.io.Resource
+import dk.group11.file.models.FileEntity
+import dk.group11.file.repositories.FileRepository
 import org.springframework.core.io.UrlResource
 import org.springframework.stereotype.Service
 import org.springframework.web.multipart.MultipartFile
-import java.io.FileNotFoundException
 import java.io.IOException
 import java.net.MalformedURLException
 import java.nio.file.Files
@@ -34,7 +32,6 @@ class FileService(private val properties: FileProperties, private var fileReposi
             // Save the file to database
             val entry = FileEntity(fileName = newFileName, originalFileName = file.originalFilename)
             return fileRepository.save(entry).id
-
         } catch (e: IOException) {
             throw StorageException("Failed to store file: '$newFileName'", e)
         }
@@ -48,7 +45,7 @@ class FileService(private val properties: FileProperties, private var fileReposi
             val resource = UrlResource(file.toUri())
 
             if (resource.exists() || resource.isReadable) {
-                return FileResourse(entry.originalFileName,resource)
+                return FileResourse(entry.originalFileName, resource)
             } else {
                 throw NotFoundException()
             }

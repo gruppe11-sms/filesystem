@@ -1,4 +1,4 @@
-package dk.gruppe11.file.models
+package dk.group11.file.models
 
 import javax.persistence.*
 

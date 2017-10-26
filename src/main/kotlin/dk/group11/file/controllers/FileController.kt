@@ -1,8 +1,7 @@
-package dk.gruppe11.file.controllers
+package dk.group11.file.controllers
 
 
-import dk.gruppe11.file.services.storage.FileService
-import dk.gruppe11.file.services.storage.IFileService
+import dk.group11.file.services.storage.IFileService
 import org.springframework.core.io.Resource
 import org.springframework.http.HttpHeaders
 import org.springframework.http.ResponseEntity
